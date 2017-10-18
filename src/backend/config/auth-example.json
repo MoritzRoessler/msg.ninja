@@ -1,0 +1,6 @@
+{
+    "google": {
+        "clientID": "723876938219-3m839dmapgehegciuoli20lgsqsgrld4.apps.googleusercontent.com",
+        "callbackURL": "localhost:1235"
+    }
+}
