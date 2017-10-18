@@ -15,7 +15,7 @@ import Divider from 'material-ui/Divider';
 
 import ProfileCard from '../ProfileCard';
 import ContactCard from '../ContactCard';
-import MAP from '../MAP';
+import MAP from '../Map';
 import IncominCallNotification from '../IncominCallNotification';
 import Header from '../Header';
 import RelationShipCard from '../RelationShipCard';
