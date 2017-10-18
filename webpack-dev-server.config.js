@@ -18,6 +18,8 @@ const config = {
     inline: true,
     port: 3000, // Port Number
     host: 'localhost', // Change to '0.0.0.0' for external facing server
+    public: 'test.msg.ninja' // That solved it
+
   },
   devtool: 'eval',
   output: {
