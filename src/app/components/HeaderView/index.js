@@ -156,7 +156,7 @@ class HeaderView extends Component {
 						 	{//<Divider style={{transform: "rotate(90deg)"}}/>
 						 	}
 							
-							<Divider style={{transform: "rotate(90deg)"}}/>
+							<Divider style={{maxWidth: "100vh" ,transform: "rotate(90deg)"}}/>
 						 	
 						 	<div style={{flex:2, margin:"calc(50px - 18px)"}}>
 
