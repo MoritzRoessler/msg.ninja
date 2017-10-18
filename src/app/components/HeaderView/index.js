@@ -140,32 +140,34 @@ class HeaderView extends Component {
 
 		          	
 		            <div style={{fontSize:20, textAlign:"center"}}>
-			             <div style={{width:"100%", display:"flex", flexDirection: "column"}}>
-			             	<div style={{flex:1}}/>
-			             	<div style={{width:"100%", display:"flex", flexDirection: "row"}}>
-			             		<div style={{flex:1, textAlign:"right"}}>
-									<Avatar style={{margin:"32px", marginLeft:this.props.auth.jwt?"64px":"32px"}} className={this.props.auth.jwt?"":"bounce"} icon={<PersonPin style={{borderColor:'grey'}}/>}/>
-								</div>
-								<div style={{flex:1, textAlign: "left", paddingTop:"44px"}}>
-									<span style={{margin:"32px" }}>
-										{this.props.auth.displayName||"Hello"}
-									</span>
-								</div>
-						 	</div>
-						 	
-						 	{//<Divider style={{transform: "rotate(90deg)"}}/>
-						 	}
-							
-							<Divider style={{maxWidth: "100vh" ,transform: "rotate(90deg)"}}/>
-						 	
-						 	<div style={{flex:2, margin:"calc(50px - 18px)"}}>
+		            	<div style={{maxHeight:"calc(100vh - 16px)",display:"flex", flexDirection:"row"}}>
+		            		<div style={{flex:1}} />
+		            		<div style={{flex:1}}>
+					             <div style={{width:"100%", display:"flex", flexDirection: "column"}}>
+					             	<div style={{flex:1}}/>
+					             	<div style={{width:"100%", display:"flex", flexDirection: "row"}}>
+					             		<div style={{flex:1, textAlign:"right"}}>
+											<Avatar style={{margin:"32px", marginLeft:this.props.auth.jwt?"64px":"32px"}} className={this.props.auth.jwt?"":"bounce"} icon={<PersonPin style={{borderColor:'grey'}}/>}/>
+										</div>
+										<div style={{flex:1, textAlign: "left", paddingTop:"44px"}}>
+											<span style={{margin:"32px" }}>
+												{this.props.auth.displayName||"Hello"}
+											</span>
+										</div>
+								 	</div>
+									<Divider style={{maxWidth: "100vh" ,transform: "rotate(90deg)"}}/>
+								 	
+								 	<div style={{flex:2, margin:"calc(50px - 18px)"}}>
 
-								{this.props.auth.jwt
-									?<RaisedButton style={{left:"0px", display:"inline-flex", alignItems:"center", justifyContent:"center"}} href="//localhost:1235/auth/google" title="Login...">Logout</RaisedButton>
-									:<RaisedButton style={{left:"0px", display:"inline-flex", alignItems:"center", justifyContent:"center"}} href="//localhost:1235/auth/google" title="Login...">Login</RaisedButton>
-								}
-							</div>
-							<div style={{flex:1}}/>
+										{this.props.auth.jwt
+											?<RaisedButton style={{left:"0px", display:"inline-flex", alignItems:"center", justifyContent:"center"}} href="//localhost:1235/auth/google" title="Login...">Logout</RaisedButton>
+											:<RaisedButton style={{left:"0px", display:"inline-flex", alignItems:"center", justifyContent:"center"}} href="//localhost:1235/auth/google" title="Login...">Login</RaisedButton>
+										}
+									</div>
+									<div style={{flex:1}}/>
+					             </div>
+					        </div>
+		            		<div style={{flex:1}} />
 			             </div>
 		            </div>
 		            <div style={{flex:2}} />
