@@ -7,11 +7,11 @@ import {setSize} from "./actions"
 export const size = (state) => {
     var s = state.w
 
-    if (s > 960) return 15
-    if (s >= 768) return 12
-    if (s >= 400) return 8
+    if (s > 960) return 12
+    if (s >= 768) return 8
+    if (s >= 400) return 6
 
-    return 3
+    return 4
 }
 
 const consts = {

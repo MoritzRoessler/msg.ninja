@@ -40,3 +40,10 @@ export const propertyMap = {
 export const styles = {
 	defaultStyle: {}
 }
+
+export const HEADERS = {
+  JSON: {
+    'Accept': 'application/json, text/plain, */*',
+    'Content-Type': 'application/json'
+  }
+}

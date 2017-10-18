@@ -1,0 +1,28 @@
+{
+    "extends": "google",
+    "plugins": [
+	    "react"
+	  ],
+    "env": {
+       "es6": true,
+       "node": true,
+       "browser": true
+    },
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 6,
+      "ecmaFeatures": {
+          "jsx": true,
+          "experimentalObjectRestSpread": true
+  		}
+  	},
+    "rules": {
+        "semi": 2,
+        "eqeqeq": 2,
+        "sort-vars": 2,
+        "no-tabs": 1,
+        "space-before-blocks": 2,
+        "space-before-function-paren": 2,
+        "prefer-spread":2
+    }
+}

@@ -12,8 +12,15 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import ResponsiveGrid from './container/ResponsiveGrid'
 import ListCards from './components/ListCards';
+import Home from './components/Home';
 
 
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext } from 'react-dnd';
+
+require('es6-promise').polyfill();
+require('fetch-everywhere');
+ 
 
 const styles = {
   container: {
@@ -28,16 +35,21 @@ const muiTheme = getMuiTheme({
 });
 
 
+/** The Main Component*/
 class Main extends Component {
-  render() { 
-    return (
-        <MuiThemeProvider muiTheme={muiTheme}>
-          <div style={styles.container}>
-            <ListCards />
-          </div>
-        </MuiThemeProvider>
+/**
+     * Render the Main Component
+     * @return {React.Element}
+     */
+    render() {
+      return (
+          <MuiThemeProvider muiTheme={muiTheme}>
+            <div style={styles.container}>
+              <Home />
+            </div>
+          </MuiThemeProvider>
     );
   }
 }
 
-export default Main;
+export default DragDropContext(HTML5Backend)(Main);
