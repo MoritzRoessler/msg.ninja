@@ -32,6 +32,7 @@
     "es6-promise": "^4.1.1",
     "express": "^4.16.1",
     "fetch-everywhere": "^1.0.5",
+    "letsencrypt-express": "^2.0.6",
     "material-ui": "latest",
     "node-fetch": "^1.7.3",
     "pg": "^7.3.0",
