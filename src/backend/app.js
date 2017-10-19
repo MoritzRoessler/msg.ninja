@@ -6,7 +6,7 @@ var authConfig = require('./config/auth'),
   fetch = require ("node-fetch"),
   jwt = require ("jwt-simple")
 
-import CONFIG from '../config.js'
+var CONFIG = require ('../config.js');
 // Passport session setup.
 //
 //   For persistent logins with sessions, Passport needs to serialize users into
