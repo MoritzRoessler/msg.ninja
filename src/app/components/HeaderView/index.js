@@ -39,6 +39,8 @@ import {
 } from 'react-router-dom'
 
 import SpeechRecCard from '../SpeechRecCard'
+
+import CONFIG from '../../../config.js'
 const HEIGHT = "calc(100vh-8px)"
 import { DirectionsRenderer } from "react-google-maps";
 
@@ -160,8 +162,8 @@ class HeaderView extends Component {
 								 	<div style={{flex:2, margin:"calc(50px - 18px)"}}>
 
 										{this.props.auth.jwt
-											?<RaisedButton style={{left:"0px", display:"inline-flex", alignItems:"center", justifyContent:"center"}} href="//localhost:1235/auth/google" title="Login...">Logout</RaisedButton>
-											:<RaisedButton style={{left:"0px", display:"inline-flex", alignItems:"center", justifyContent:"center"}} href="//localhost:1235/auth/google" title="Login...">Login</RaisedButton>
+											?<RaisedButton style={{left:"0px", display:"inline-flex", alignItems:"center", justifyContent:"center"}} href={CONFIG.AUTH_URL} title="Login...">Logout</RaisedButton>
+											:<RaisedButton style={{left:"0px", display:"inline-flex", alignItems:"center", justifyContent:"center"}} href={CONFIG.AUTH_URL} title="Login...">Login</RaisedButton>
 										}
 									</div>
 									<div style={{flex:1}}/>
