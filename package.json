@@ -41,6 +41,7 @@
     "hbs": "^4.0.1",
     "jwt-simple": "^0.5.1",
     "letsencrypt-express": "^2.0.6",
+    "mailparser": "^2.1.0",
     "material-ui": "latest",
     "morgan": "^1.9.0",
     "node-fetch": "^1.7.3",
@@ -69,6 +70,7 @@
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.13.6",
     "sip": "0.0.4",
-    "socket.io": "^2.0.3"
+    "socket.io": "^2.0.3",
+    "utf8": "^2.1.2"
   }
 }

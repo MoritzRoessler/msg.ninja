@@ -8,7 +8,7 @@ var Sequelize = require('sequelize'),
 var utf8 = require ('utf8')
 var ForbiddenError = require('epilogue').Errors.ForbiddenError;
 
-var database = new Sequelize('postgres://postgres@localhost:5432/msgninja');
+var database = new Sequelize('postgres://postgres:postgres@localhost:5432/msgninja');
 
 var User = database.define('User', {
   username: Sequelize.STRING,
