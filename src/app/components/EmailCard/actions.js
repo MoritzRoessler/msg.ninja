@@ -7,7 +7,7 @@ export default ACTIONS;
 
 import CONFIG from '../../../config.js';
 
-const URL_BASE = [CONFIG.HOST_PROTOCOL, CONFIG.HOST,':', CONFIG.PORT_SERVER_DATA].join ("");
+const URL_BASE = CONFIG.DATA_BASE;
 const API_PATH_EMAILS= "/emails/"
 const API_PATH_EMAIL= "/email/"
 

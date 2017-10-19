@@ -6,7 +6,7 @@ import Peer from 'peerjs'
 
 import CONFIG from '../../../config.js';
 
-const URL_BASE = [CONFIG.HOST_PROTOCOL, CONFIG.HOST,':', CONFIG.PORT_SERVER_SOCK].join ("");
+const URL_BASE = CONFIG.SOCK_BASE
 const API_PATH_CONTACTS = "/contacts/"
 class SIPCard extends Component {
 	componentDidMount () {
