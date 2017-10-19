@@ -8,7 +8,7 @@ var Sequelize = require('sequelize'),
 var utf8 = require ('utf8')
 var ForbiddenError = require('epilogue').Errors.ForbiddenError;
 
-var database = new Sequelize('postgres://postgres@localhost:5432/msgninja');
+var database = new Sequelize('postgres://postgres:postgres@localhost:5432/msgninja');
 
 var User = database.define('User', {
   username: Sequelize.STRING,
@@ -110,6 +110,7 @@ app.get ('/directions',function (req, res, next) {
 // Initialize epilogue
 epilogue.initialize({
   app: app,
+  base: '/api',
   sequelize: database
 });
 
@@ -124,6 +125,8 @@ var tokenResource = epilogue.resource({
   model: Token,
   endpoints: ['/tokens', '/tokens/:id']
 });
+tokenResource.read.auth (isAuthenticated)
+tokenResource.list.auth (isAuthenticated)
 
 var googleRessource = epilogue.resource({
   model: GoogleProfile,
@@ -183,7 +186,7 @@ function  getUserAndToken (req,res,context) {
             })
          })
 };
-//googleDriveRessource.read.auth (isAuthenticated)
+googleDriveRessource.read.auth (isAuthenticated)
 googleDriveRessource.read.fetch.before (function (req, res, context) {
     return new Promise ((resolve, reject) => {
 
