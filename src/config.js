@@ -34,6 +34,5 @@ const CONFIG = {
 	}
 }
 
-const KEY = "LOCAL"
 
-export default CONFIG[KEY];
+export default CONFIG.REMOTE;
