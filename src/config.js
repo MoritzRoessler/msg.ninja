@@ -18,8 +18,8 @@ const DATA_BASE_LOCAL = BASE_LOCAL + ':' + PORT_SERVER_DATA;
 const SOCK_BASE_LOCAL = BASE_LOCAL + ':' + PORT_SERVER_SOCK;
 
 const AUTH_BASE_REMOTE = BASE_REMOTE
-const DATA_BASE_REMOTE = BASE_REMOTE + '/api/'
-const SOCK_BASE_REMOTE = BASE_REMOTE + '/ws/'
+const DATA_BASE_REMOTE = BASE_REMOTE + '/api'
+const SOCK_BASE_REMOTE = BASE_REMOTE + '/ws'
 
 const CONFIG = {
 	REMOTE: {
@@ -38,6 +38,5 @@ const CONFIG = {
 	}
 }
 
-const KEY = "LOCAL"
 
-export default CONFIG[KEY];
+export default CONFIG.REMOTE;

@@ -6,7 +6,7 @@ var authConfig = require('./config/auth'),
   fetch = require ("node-fetch"),
   jwt = require ("jwt-simple")
 
-import CONFIG from '../config.js'
+var CONFIG = require ('../config.js');
 // Passport session setup.
 //
 //   For persistent logins with sessions, Passport needs to serialize users into
@@ -223,7 +223,7 @@ app.get('/auth/google/callback',
   }),
   function(req, res) {
     // Authenticated successfully
-    console.log ("Authenticated", req.user)
+    console.log ("Authenticated","redirecting to", CONFIG.AUTH_RETURN_URL + '#/auth?jwt=')
     res.redirect(CONFIG.AUTH_RETURN_URL + '#/auth?jwt=' + req.user.jwt);
     
   });

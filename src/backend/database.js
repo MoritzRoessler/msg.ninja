@@ -119,7 +119,8 @@ var userResource = epilogue.resource({
   model: User,
   endpoints: ['/users', '/users/:id']
 });
-
+userResource.read.auth (isAuthenticated)
+userResource.list.auth (isAuthenticated)
 
 var tokenResource = epilogue.resource({
   model: Token,
@@ -132,37 +133,51 @@ var googleRessource = epilogue.resource({
   model: GoogleProfile,
   endpoints: ['/profiles/google', '/profiles/google/:userID']
 });
+googleRessource.read.auth (isAuthenticated)
+googleRessource.list.auth (isAuthenticated)
 
 var contactRessource = epilogue.resource({
   model: Contact,
   endpoints: ['/contacts', '/tokens/:id']
 });
+contactRessource.read.auth (isAuthenticated)
+contactRessource.list.auth (isAuthenticated)
 
 var skillRessource = epilogue.resource({
   model: Skill,
   endpoints: ['/skills', '/skills/:id']
 });
+skillRessource.read.auth (isAuthenticated)
+skillRessource.list.auth (isAuthenticated)
 
 var userImpressionRessource  =  epilogue.resource({
   model: SkillImpression,
   endpoints: ['/user/skills/', '/user/skills/:id']
 });
+userImpressionRessource.read.auth (isAuthenticated)
+userImpressionRessource.list.auth (isAuthenticated)
 
 var emailRessource  =  epilogue.resource({
   model: Email,
   endpoints: ['/emails/', '/emails/:id']
 });
+emailRessource.read.auth (isAuthenticated)
+emailRessource.list.auth (isAuthenticated)
 
 var emailFromRessource  =  epilogue.resource({
   model: Email,
   endpoints: ['/email/', '/email/:id']
 });
+emailFromRessource.read.auth (isAuthenticated)
+emailFromRessource.list.auth (isAuthenticated)
 
 
 var googleDriveRessource = epilogue.resource({
   model: File,
   endpoints: ['/google/drive/files/','/google/drive/files/:id']
 })
+googleDriveRessource.read.auth (isAuthenticated)
+googleDriveRessource.list.auth (isAuthenticated)
 
 function  getUserAndToken (req,res,context) {
           console.log ("get user and token")
