@@ -39,4 +39,4 @@ const CONFIG = {
 }
 
 
-export default CONFIG.REMOTE;
+export default CONFIG.LOCAL;
