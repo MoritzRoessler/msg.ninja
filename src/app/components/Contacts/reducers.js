@@ -33,7 +33,7 @@ export default function AuthReducer (state = {loaded: false, loading: false, con
 
 
             newState.selectedContactID = action.data;
-
+            
             var contact = newState.contacts.filter (function (c) {
                 return c.id == action.data
             })[0]

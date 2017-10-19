@@ -1,3 +1,10 @@
+import CONFIG from '../../../config.js';
+
+const URL_BASE = CONFIG.DATA_BASE;
+const API_PATH_CONTACTS = "/contacts/"
+const API_PATH_USER = "/users/"
+const API_PATH_SKILLS = "/skills/"
+
 export const ACTIONS = {
 	FETCH_CONTACTS: 'FETCH_CONTACTS',
     FETCHED_CONTACTS: 'FETCHED_CONTACTS',
@@ -19,11 +26,12 @@ const HEADERS = {
 var GoogleContacts = require('google-contacts-api')
 
 export function fetchContacts (token) {
+    var query = "?key=" + token
     // We return a function instead of an action object
     return (dispatch) => {
         dispatch({type:ACTIONS.FETCH_CONTACTS, data: token});
 
-        fetch ("http://localhost:1234/contacts/?key=" + token).then ((res) => res.json ()).then ((json) => {
+        fetch (URL_BASE + API_PATH_CONTACTS + query).then ((res) => res.json ()).then ((json) => {
             dispatch (fetcedContacts (json));
         })
 
@@ -33,22 +41,24 @@ export function fetchContacts (token) {
 }
 
 export function fetchUser (token, email) {
+    var query = "?key=" + token
     // We return a function instead of an action object
     return (dispatch) => {
         dispatch({type:ACTIONS.FETCH_CONTACTS, data: token});
 
-        fetch ("http://localhost:1234/users/?key=" + token).then ((res) => res.json ()).then ((json) => {
+        fetch (URL_BASE + API_PATH_USER + query).then ((res) => res.json ()).then ((json) => {
             dispatch (fetcedUser (json));
         })
     }
 }
 
 export function fetchSkills (token) {
+    var query = "?key=" + token
     return (dispatch) => {
         dispatch({type:ACTIONS.FETCH_SKILLS, data: token});
 
-        fetch ("http://localhost:1234/skills/?key=" + token).then ((res) => res.json ()).then ((skills) => {
-            fetch ("http://localhost:1234/user/skills/?key=" + token).then((res) => res.json()).then ((impressions) => {
+        fetch (URL_BASE + API_PATH_USER + query).then ((res) => res.json ()).then ((skills) => {
+            fetch (URL_BASE + API_PATH_SKILLS + query).then((res) => res.json()).then ((impressions) => {
                 
                 dispatch (fetchedSkills ({skills, impressions}));
             })
@@ -66,6 +76,7 @@ export function fetchedSkills (data) {
 }
 
 export function createUserFromContact (contact, token) {
+    var query = "?key=" + token
     // We return a function instead of an action object
     return (dispatch) => {
         dispatch({type:ACTIONS.CREATE_USER, data: token});
@@ -76,7 +87,7 @@ export function createUserFromContact (contact, token) {
         }
         
     
-        fetch ("http://localhost:1234/users/?key=" + token, {
+        fetch (URL_BASE + API_PATH_USER + query, {
             method: 'POST',
             headers: HEADERS.JSON,
             body: JSON.stringify (userData)
@@ -89,6 +100,7 @@ export function createUserFromContact (contact, token) {
 }
 
 export function addImpression (from, to, skill, stars, token) {
+    var query = "?key=" + token
     // We return a function instead of an action object
     return (dispatch) => {
        // dispatch({type:ACTIONS.CREATE_USER, data: token});
@@ -101,7 +113,7 @@ export function addImpression (from, to, skill, stars, token) {
         }
         
     
-        fetch ("http://localhost:1234/user/skills/?key=" + token, {
+        fetch (URL_BASE + API_PATH_SKILLS + query, {
             method: 'POST',
             headers: HEADERS.JSON,
             body: JSON.stringify (userData)

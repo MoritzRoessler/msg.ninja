@@ -17,7 +17,9 @@ const config = {
     hot: true, // Live-reload
     inline: true,
     port: 3000, // Port Number
-    host: '0.0.0.0', // Change to '0.0.0.0' for external facing server
+    host: 'localhost', // Change to '0.0.0.0' for external facing server
+    public: 'test.msg.ninja' // That solved it
+
   },
   devtool: 'eval',
   output: {

@@ -4,10 +4,15 @@ import {setPeerID, updatePeerID, callIncoming} from './actions'
 
 import Peer from 'peerjs'
 
+import CONFIG from '../../../config.js';
+
+const URL_BASE = CONFIG.SOCK_BASE
+const API_PATH_CONTACTS = "/contacts/"
 class SIPCard extends Component {
 	componentDidMount () {
-		const socket = io.connect('http://127.0.0.1:4200');
-		var peer = new Peer({key: 'lwjd5qra8257b9'});
+		console.log ("CONNECT SOCKET " , URL_BASE)
+		const socket = io.connect(URL_BASE);
+		var peer = new Peer({key: KEY_PEER});
 
 		window.peer = peer; 
 
