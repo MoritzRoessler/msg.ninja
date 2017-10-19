@@ -1,6 +1,10 @@
-const ACTIONS = {
-	ACTION: 'ACTION'
-}
+import CONFIG from '../../../config.js';
+
+
+const URL_BASE = [CONFIG.HOST_PROTOCOL, CONFIG.HOST,':', CONFIG.PORT_SERVER_DATA].join ("");
+const API_PATH_DIRECTIONS = "/directions/"
+
+
 export function SelectContact (id) {
     // We return a function instead of an action object
     return (dispatch) => {
@@ -18,7 +22,8 @@ export function FetchDirections (from, to) {
     
     
     return (dispatch) => {
-        return fetch ("http://localhost:1234/directions/?from="+from+"&to="+to)
+        var query = "from="+from+"&to="+to
+        return fetch (URL_BASE + API_PATH_DIRECTIONS + query)
         .then ((res) => res.json ())
         .then (function (json) {
             

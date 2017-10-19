@@ -1,14 +1,22 @@
+import CONFIG from '../../../config.js';
+
+const URL_BASE = [CONFIG.HOST_PROTOCOL, CONFIG.HOST,':', CONFIG.PORT_SERVER_DATA].join ("");
+const API_PATH_TOKENS = "/tokens/"
+
+
 export const ACTIONS = {
-	AUTHENTICATE: 'AUTHENTICATE',
+    AUTHENTICATE: 'AUTHENTICATE',
     TOKEN_GOOGLE: 'TOKEN_GOOGLE'
 }
 
+
 export function authenticate (token) {
+    var query = '?jwt=' + token
     // We return a function instead of an action object
     return (dispatch) => {
         dispatch({type:ACTIONS.AUTHENTICATE, data: token});
 
-        fetch ('http://localhost:1234/tokens/?jwt=' + token).then ((res) => res.json ()).then (function (json) {
+        fetch (URL_BASE + API_PATH_TOKENS + query).then ((res) => res.json ()).then (function (json) {
             var tok = json [0];
             dispatch (setGoogleToken (tok.googleAccessToken));
         })
